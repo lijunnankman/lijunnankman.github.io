@@ -1,0 +1,15 @@
+title: "YOUR NAME"
+description: "Write a short introduction about your work and research."
+url: "https://lijunnankman.github.io"
+baseurl: ""
+
+markdown: kramdown
+plugins: []
+
+exclude:
+  - README.md
+  - Publish.ps1
+  - Publish.cmd
+  - Preview.ps1
+  - Preview.cmd
+  - .gitignore

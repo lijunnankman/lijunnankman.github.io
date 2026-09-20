@@ -1,0 +1,11 @@
+items:
+  - start: "Jan 2025"
+    end: "Jun 2025"
+    company: "Company Name"
+    company_logo: ""
+    role: "Intern"
+    location: "City"
+    summary: "One sentence about your contribution."
+    bullets:
+      - "What you built or improved."
+      - "A measurable result, if available."

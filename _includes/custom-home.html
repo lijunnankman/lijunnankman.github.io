@@ -1,0 +1,118 @@
+{% assign profile = site.data.profile %}
+<div class="home-layout">
+  <aside class="profile-sidebar">
+    <div class="profile-card">
+      <div class="profile-avatar">
+        <img src="{{ profile.avatar | relative_url }}" alt="{{ site.title }}">
+      </div>
+      <h1 class="profile-name">{{ site.title }}</h1>
+      {% if profile.role != "" %}<p class="profile-program">{{ profile.role }}</p>{% endif %}
+      {% if profile.affiliation != "" %}<p class="profile-school">{{ profile.affiliation }}</p>{% endif %}
+      <p class="profile-bio">{{ site.description }}</p>
+
+      <div class="profile-contact-list">
+        {% if profile.location != "" %}
+          <div class="profile-contact-item"><span class="profile-contact-icon" aria-hidden="true">⌖</span><div><div class="profile-contact-label">Location</div><div class="profile-contact-value">{{ profile.location }}</div></div></div>
+        {% endif %}
+        {% if profile.email != "" %}
+          <div class="profile-contact-item"><span class="profile-contact-icon" aria-hidden="true">✉</span><div><div class="profile-contact-label">Email</div><div class="profile-contact-value"><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></div></div></div>
+        {% endif %}
+        {% if profile.github != "" %}
+          <div class="profile-contact-item"><span class="profile-contact-icon" aria-hidden="true">⌘</span><div><div class="profile-contact-label">GitHub</div><div class="profile-contact-value"><a href="{{ profile.github }}">{{ profile.github | remove: 'https://' }}</a></div></div></div>
+        {% endif %}
+        {% if profile.linkedin != "" %}
+          <div class="profile-contact-item"><span class="profile-contact-icon" aria-hidden="true">in</span><div><div class="profile-contact-label">LinkedIn</div><div class="profile-contact-value"><a href="{{ profile.linkedin }}">{{ profile.linkedin | remove: 'https://' }}</a></div></div></div>
+        {% endif %}
+      </div>
+
+      {% if profile.cv != "" %}
+        <div class="profile-link-group"><a class="profile-link-card" href="{{ profile.cv | relative_url }}"><span class="profile-link-title">Download CV</span></a></div>
+      {% endif %}
+    </div>
+  </aside>
+
+  <div class="home-content">
+    <section id="industry-experience" class="home-section">
+      <h2>Experience</h2>
+      {% for x in site.data.home_industry.items %}
+        <div class="card{% if x.company_logo == '' %} card--no-logo{% endif %}">
+          {% if x.company_logo != "" %}<div class="card__logo"><img src="{{ x.company_logo | relative_url }}" alt="{{ x.company }} logo"></div>{% endif %}
+          <div class="card__body">
+            <div class="meta">{{ x.start }} – {{ x.end }}{% if x.location != "" %} · {{ x.location }}{% endif %}</div>
+            <h3>{{ x.role }} · {{ x.company }}</h3>
+            {% if x.summary != "" %}<p>{{ x.summary }}</p>{% endif %}
+            {% if x.bullets.size > 0 %}<ul>{% for b in x.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+
+    <section id="projects" class="home-section">
+      <h2>Projects</h2>
+      {% for pr in site.data.home_projects.items %}
+        <div class="card{% if pr.logo == '' %} card--no-logo{% endif %}">
+          {% if pr.logo != "" %}<div class="card__logo"><img src="{% if pr.logo contains '://' %}{{ pr.logo }}{% else %}{{ pr.logo | relative_url }}{% endif %}" alt="{{ pr.title }} logo"></div>{% endif %}
+          <div class="card__body">
+            <h3>{{ pr.title }}</h3>
+            {% if pr.keywords.size > 0 %}<div class="chips">{% for k in pr.keywords %}<span class="chip">{{ k }}</span>{% endfor %}</div>{% endif %}
+            {% if pr.teaser != "" %}<p>{{ pr.teaser }}</p>{% endif %}
+            {% if pr.details != "" %}<details class="details"><summary>Show more</summary><div class="details__content">{{ pr.details | markdownify }}</div></details>{% endif %}
+            <div class="links">
+              {% if pr.link != "" %}<a href="{{ pr.link }}">Project</a>{% endif %}
+              {% if pr.github_repo != "" %}<span class="github-stars" data-repo="{{ pr.github_repo }}">★ <span class="github-stars__count">—</span></span>{% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+
+    <section id="publications" class="home-section">
+      <h2>Publications</h2>
+      {% for p in site.data.home_publications.items %}
+        <div class="card{% if p.figure != '' %} card--paper{% else %} card--no-logo{% endif %}">
+          {% if p.figure != "" %}<div class="card__logo"><img src="{{ p.figure | relative_url }}" alt="{{ p.title }} figure"></div>{% endif %}
+          <div class="card__body">
+            <div class="meta">{{ p.status }}{% if p.venue != "" %} · {{ p.venue }}{% endif %}{% if p.year != "" %} · {{ p.year }}{% endif %}</div>
+            <h3>{{ p.title }}</h3>
+            <div class="sub">{{ p.authors }}</div>
+            {% if p.keywords.size > 0 %}<div class="chips">{% for k in p.keywords %}<span class="chip">{{ k }}</span>{% endfor %}</div>{% endif %}
+            {% if p.teaser != "" %}<p>{{ p.teaser }}</p>{% endif %}
+            {% if p.abstract != "" %}<details class="details"><summary>Show abstract</summary><div class="details__content">{{ p.abstract | markdownify }}</div></details>{% endif %}
+            <div class="links">
+              {% if p.paper_link != "" %}<a href="{{ p.paper_link }}">Paper</a>{% endif %}
+              {% if p.code_link != "" %}<a href="{{ p.code_link }}">Code</a>{% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+
+    <section id="academic-experience" class="home-section">
+      <h2>Education</h2>
+      {% for x in site.data.home_academic.items %}
+        <div class="card{% if x.school_logo == '' %} card--no-logo{% endif %}">
+          {% if x.school_logo != "" %}<div class="card__logo"><img src="{{ x.school_logo | relative_url }}" alt="{{ x.institution }} logo"></div>{% endif %}
+          <div class="card__body">
+            <div class="meta">{{ x.start }} – {{ x.end }}{% if x.location != "" %} · {{ x.location }}{% endif %}</div>
+            <h3>{{ x.institution }}</h3>
+            <div class="sub">{{ x.school_unit }} · {{ x.program }}{% if x.advisor != "" %}<br>Advisor: {{ x.advisor }}{% endif %}</div>
+            {% if x.highlights.size > 0 %}<ul>{% for b in x.highlights %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+
+    {% if site.data.home_life.items.size > 0 %}
+      <section id="life-updates" class="home-section">
+        <h2>Life Updates</h2>
+        {% for x in site.data.home_life.items %}
+          <div class="card{% if x.logo == '' %} card--no-logo{% endif %}">
+            {% if x.logo != "" %}<div class="card__logo"><img src="{{ x.logo | relative_url }}" alt="{{ x.title }} logo"></div>{% endif %}
+            <div class="card__body"><div class="meta">{{ x.date }}</div><h3>{{ x.title }}</h3><p>{{ x.summary }}</p></div>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+  </div>
+</div>
+<script defer src="{{ '/assets/js/github-stars.js' | relative_url }}"></script>

@@ -1,0 +1,27 @@
+# Jekyll build output and local cache
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
+/.sass-cache/
+/.bundle/
+/vendor/
+
+# Local dependencies and editor files
+/node_modules/
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*~
+
+# Operating system and temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+
+# Local secrets
+.env
+.env.*
+!.env.example

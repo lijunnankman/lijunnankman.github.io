@@ -1,0 +1,11 @@
+items:
+  - start: "2020"
+    end: "2024"
+    institution: "Your University"
+    school_logo: ""
+    school_unit: "Your School"
+    program: "Your Degree"
+    advisor: ""
+    location: "Your city"
+    highlights:
+      - "Add a relevant highlight, or remove this line."
