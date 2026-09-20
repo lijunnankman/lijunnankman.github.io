@@ -25,3 +25,8 @@ desktop.ini
 .env
 .env.*
 !.env.example
+
+# Local editing and publishing helpers
+/README.md
+*.cmd
+*.ps1
