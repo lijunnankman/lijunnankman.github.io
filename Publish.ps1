@@ -108,8 +108,10 @@ try {
             & $gh api --method POST "repos/$fullName/pages" -f 'build_type=legacy' -f 'source[branch]=main' -f 'source[path]=/' --silent
         }
     } else {
-        $pagesSource = (& $gh api "repos/$fullName/pages" --jq '(.source.branch // "") + ":" + (.source.path // "")').Trim()
-        if ($LASTEXITCODE -ne 0) { throw 'Could not inspect the GitHub Pages source.' }
+        $pagesJson = & $gh api "repos/$fullName/pages"
+        if ($LASTEXITCODE -ne 0 -or -not $pagesJson) { throw 'Could not inspect the GitHub Pages source.' }
+        $pagesSettings = ConvertFrom-Json -InputObject ($pagesJson -join "`n")
+        $pagesSource = "$($pagesSettings.source.branch):$($pagesSettings.source.path)"
         if ($pagesSource -ne 'main:/') {
             Run 'Setting GitHub Pages to the main branch' {
                 & $gh api --method PUT "repos/$fullName/pages" -f 'build_type=legacy' -f 'source[branch]=main' -f 'source[path]=/' --silent
