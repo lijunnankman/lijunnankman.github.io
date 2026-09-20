@@ -211,7 +211,7 @@ a:hover {
 }
 
 .profile-link-group::before {
-  content: "English Resumes · Role-specific versions";
+  content: "Curriculum Vitae";
   display: block;
   font-size: 0.78rem;
   font-weight: 650;
@@ -235,6 +235,14 @@ a:hover {
 .profile-link-card:hover {
   text-decoration: none;
   background: rgba(0, 0, 0, 0.04);
+}
+
+.profile-link-card--empty {
+  opacity: 0.7;
+}
+
+.profile-link-card--empty:hover {
+  background: rgba(0, 0, 0, 0.015);
 }
 
 .profile-link-title,
@@ -273,10 +281,6 @@ a:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.card--no-logo {
-  grid-template-columns: 1fr;
-}
-
 .card__logo {
   display: flex;
   align-items: flex-start;
@@ -288,6 +292,20 @@ a:hover {
   height: 64px;
   object-fit: contain;
   border-radius: 12px;
+}
+
+.card__placeholder {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #f5f7fa, #e9edf3);
+}
+
+.card__placeholder--paper {
+  width: calc(var(--paperw) - 16px);
+  height: calc((var(--paperw) - 16px) * 0.56);
 }
 
 .card__body {
