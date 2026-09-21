@@ -1,7 +1,8 @@
-role: "Your role or research area"
-affiliation: "Your university or organization"
-location: "Your city"
-email: "you@example.com"
+role: "Ph.D. candidate"
+affiliation: "Harbin Institute of Technology"
+location: "Hangzhou"
+email: "kman006007@gmail.com"
 github: "https://github.com/lijunnankman"
 linkedin: ""
-avatar: "/images/avatar.svg"
+# 图片替换：左侧头像。把图片放进 images/，例如 "/images/me.jpg"。
+avatar: "/images/me.jpg"

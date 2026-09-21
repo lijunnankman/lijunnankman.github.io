@@ -27,6 +27,19 @@ a {
   text-decoration: none;
 }
 
+.home-content a {
+  color: #52adc8;
+}
+
+.home-content a:visited {
+  color: #7dc2d6;
+}
+
+.home-content a:hover {
+  color: #3e8296;
+  text-decoration: underline;
+}
+
 a:hover {
   text-decoration: underline;
 }
@@ -294,6 +307,12 @@ a:hover {
   border-radius: 12px;
 }
 
+.card__logo--multiple {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .card__placeholder {
   display: block;
   width: 64px;
@@ -306,6 +325,20 @@ a:hover {
 .card__placeholder--paper {
   width: calc(var(--paperw) - 16px);
   height: calc((var(--paperw) - 16px) * 0.56);
+}
+
+.card__video {
+  display: block;
+  width: min(100%, 640px);
+  aspect-ratio: 16 / 9;
+  margin: 0.7rem 0;
+  border-radius: 12px;
+  background: #111;
+}
+
+.card__video--paper {
+  width: calc(var(--paperw) - 16px);
+  margin: 0;
 }
 
 .card__body {
@@ -332,6 +365,17 @@ a:hover {
 .sub {
   opacity: 0.85;
   margin-bottom: 0.35rem;
+}
+
+.card--paper .sub {
+  opacity: 1;
+  margin-bottom: 0.1rem;
+}
+
+.publication-venue {
+  color: #333;
+  font-size: 0.98rem;
+  margin-bottom: 0.3rem;
 }
 
 .chips {
@@ -429,6 +473,10 @@ a:hover {
     justify-content: flex-start;
   }
 
+  .card__logo--multiple {
+    align-items: flex-start;
+  }
+
   .card__logo img {
     width: 64px;
     height: 64px;
@@ -438,5 +486,9 @@ a:hover {
     width: min(100%, calc(var(--paperw) - 16px));
     height: auto;
     aspect-ratio: 16 / 9;
+  }
+
+  .card__video--paper {
+    width: min(100%, calc(var(--paperw) - 16px));
   }
 }

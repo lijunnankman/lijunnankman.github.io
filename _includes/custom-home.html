@@ -71,6 +71,19 @@
   </aside>
 
   <div class="home-content">
+
+    <section class="home-section" aria-label="Introduction">
+      <p>
+        Hi, this is Junnan Li. I am a final-year (2022~ ) Ph.D. candidate in Faculty of Computing,
+        Harbin Institute of Technology, advised by Prof.
+        <a href="https://homepage.hit.edu.cn/zhangshengping" target="_blank" rel="noopener noreferrer">
+          Shengping Zhang
+        </a>.
+        My research focuses on 3D vision and neural rendering, including scene/object reconstruction,
+        inverse rendering, neural BSDF/sampling, etc.
+      </p>    
+    </section>
+
     <section id="academic-experience" class="home-section">
       <h2>Academic Experience</h2>
       {% for x in site.data.home_academic.items %}
@@ -92,8 +105,14 @@
       <h2>Industry Experience</h2>
       {% for x in site.data.home_industry.items %}
         <div class="card">
-          <div class="card__logo">
-            {% if x.company_logo != "" %}<img src="{{ x.company_logo | relative_url }}" alt="{{ x.company }} logo">{% else %}<span class="card__placeholder" aria-hidden="true"></span>{% endif %}
+          <div class="card__logo{% if x.company_logos and x.company_logos.size > 0 %} card__logo--multiple{% endif %}">
+            {% if x.company_logos and x.company_logos.size > 0 %}
+              {% for logo in x.company_logos %}<img src="{{ logo | relative_url }}" alt="{{ x.company }} logo {{ forloop.index }}">{% endfor %}
+            {% elsif x.company_logo and x.company_logo != "" %}
+              <img src="{{ x.company_logo | relative_url }}" alt="{{ x.company }} logo">
+            {% else %}
+              <span class="card__placeholder" aria-hidden="true"></span>
+            {% endif %}
           </div>
           <div class="card__body">
             <div class="meta">{{ x.start }} – {{ x.end }}{% if x.location != "" %} · {{ x.location }}{% endif %}</div>
@@ -110,12 +129,23 @@
       {% for p in site.data.home_publications.items %}
         <div class="card card--paper">
           <div class="card__logo">
-            {% if p.figure != "" %}<img src="{{ p.figure | relative_url }}" alt="{{ p.title }} figure">{% else %}<span class="card__placeholder card__placeholder--paper" aria-hidden="true"></span>{% endif %}
+            {% if p.video and p.video != "" %}
+              <video class="card__video card__video--paper" controls preload="metadata" playsinline {% if p.figure and p.figure != "" %}poster="{{ p.figure | relative_url }}"{% endif %}>
+                <source src="{% if p.video contains '://' %}{{ p.video }}{% else %}{{ p.video | relative_url }}{% endif %}" type="video/mp4">
+                Your browser does not support video.
+              </video>
+            {% elsif p.figure != "" %}<img src="{{ p.figure | relative_url }}" alt="{{ p.title }} figure">{% else %}<span class="card__placeholder card__placeholder--paper" aria-hidden="true"></span>{% endif %}
           </div>
           <div class="card__body">
-            <div class="meta">{% if p.status != "" %}{{ p.status }}{% endif %}{% if p.venue != "" %} · {{ p.venue }}{% endif %}{% if p.year != "" %} · {{ p.year }}{% endif %}</div>
             <h3>{{ p.title }}</h3>
             <div class="sub">{{ p.authors }}</div>
+            {% if p.venue and p.venue != "" %}
+              <div class="publication-venue"><em>{{ p.venue | escape }}{% if p.venue_short and p.venue_short != "" %} (<strong>{{ p.venue_short | escape }}</strong>){% endif %}{% if p.year and p.year != "" %}, {{ p.year | escape }}{% endif %}</em></div>
+            {% elsif p.status and p.status != "" %}
+              <div class="publication-venue"><em>{{ p.status | escape }}{% if p.year and p.year != "" %}, {{ p.year | escape }}{% endif %}</em></div>
+            {% elsif p.year and p.year != "" %}
+              <div class="publication-venue"><em>{{ p.year | escape }}</em></div>
+            {% endif %}
             {% if p.keywords.size > 0 %}<div class="chips">{% for k in p.keywords %}<span class="chip">{{ k }}</span>{% endfor %}</div>{% endif %}
             {% if p.teaser != "" %}<p>{{ p.teaser }}</p>{% endif %}
             {% if p.abstract != "" %}<details class="details"><summary>Show abstract</summary><div class="details__content">{{ p.abstract | markdownify }}</div></details>{% endif %}
@@ -136,6 +166,12 @@
             <h3>{{ pr.title }}</h3>
             {% if pr.keywords.size > 0 %}<div class="chips">{% for k in pr.keywords %}<span class="chip">{{ k }}</span>{% endfor %}</div>{% endif %}
             {% if pr.teaser != "" %}<p>{{ pr.teaser }}</p>{% endif %}
+            {% if pr.video and pr.video != "" %}
+              <video class="card__video" controls preload="metadata" playsinline>
+                <source src="{% if pr.video contains '://' %}{{ pr.video }}{% else %}{{ pr.video | relative_url }}{% endif %}" type="video/mp4">
+                Your browser does not support video.
+              </video>
+            {% endif %}
             {% if pr.details != "" %}<details class="details"><summary>Show more</summary><div class="details__content">{{ pr.details | markdownify }}</div></details>{% endif %}
             <div class="links">{% if pr.link != "" %}<a href="{{ pr.link }}">Project</a>{% endif %}{% if pr.github_repo != "" %}<span class="github-stars" data-repo="{{ pr.github_repo }}">★ <span class="github-stars__count">—</span></span>{% endif %}</div>
           </div>
@@ -143,15 +179,25 @@
       {% endfor %}
     </section>
 
-    {% if site.data.home_life.items.size > 0 %}
-      <section id="life-updates" class="home-section">
-        <h2>Life Updates</h2>
-        {% for x in site.data.home_life.items %}
+    {% if site.data.home_award.items.size > 0 %}
+      <section id="award" class="home-section">
+        <h2>Award</h2>
+        {% for x in site.data.home_award.items %}
           <div class="card">
             <div class="card__logo">
               {% if x.logo != "" %}<img src="{{ x.logo | relative_url }}" alt="{{ x.title }} logo">{% else %}<span class="card__placeholder" aria-hidden="true"></span>{% endif %}
             </div>
-            <div class="card__body"><div class="meta">{{ x.date }}</div><h3>{{ x.title }}</h3>{% if x.summary != "" %}<p>{{ x.summary }}</p>{% endif %}</div>
+            <div class="card__body">
+              <div class="meta">{{ x.date }}</div>
+              <h3>{{ x.title }}</h3>
+              {% if x.summary != "" %}<p>{{ x.summary }}</p>{% endif %}
+              {% if x.video and x.video != "" %}
+                <video class="card__video" controls preload="metadata" playsinline>
+                  <source src="{% if x.video contains '://' %}{{ x.video }}{% else %}{{ x.video | relative_url }}{% endif %}" type="video/mp4">
+                  Your browser does not support video.
+                </video>
+              {% endif %}
+            </div>
           </div>
         {% endfor %}
       </section>

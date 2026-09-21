@@ -1,10 +1,38 @@
 items:
   - start: "Jan 2025"
     end: "Jun 2025"
+    company: "Alibaba Group · Youku"
+    # 图片替换：这段实习经历左侧的公司 Logo，例如 "/images/company.png"。
+    # company_logo: "/images/alibaba.png"
+    company_logos:
+      - "/images/alibaba.png"
+      - "/images/youku.png"
+    role: "Algorithm Intern"
+    location: "Hangzhou, China"
+    summary: "One sentence about your contribution."
+    bullets:
+      - "What you built or improved."
+      - "A measurable result, if available."
+
+  - start: "Jan 2025"
+    end: "Jun 2025"
     company: "Company Name"
-    company_logo: ""
-    role: "Intern"
-    location: "City"
+    # 图片替换：这段实习经历左侧的公司 Logo，例如 "/images/company.png"。
+    company_logo: "/images/raytron.jpg"
+    role: "Algorithm Intern"
+    location: "Yantai, China"
+    summary: "One sentence about your contribution."
+    bullets:
+      - "What you built or improved."
+      - "A measurable result, if available."
+
+  - start: "Jan 2025"
+    end: "Jun 2025"
+    company: "Company Name"
+    # 图片替换：这段实习经历左侧的公司 Logo，例如 "/images/company.png"。
+    company_logo: "/images/qiyuan.jpg"
+    role: "Algorithm Intern"
+    location: "Beijing, China"
     summary: "One sentence about your contribution."
     bullets:
       - "What you built or improved."

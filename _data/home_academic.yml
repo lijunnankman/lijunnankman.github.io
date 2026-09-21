@@ -1,10 +1,23 @@
 items:
-  - start: "2020"
-    end: "2024"
-    institution: "Your University"
-    school_logo: ""
-    school_unit: "Your School"
-    program: "Your Degree"
+  - start: "2021"
+    end: "Present"
+    institution: "Harbin Institute of Technology"
+    # 图片替换：这一段教育经历左侧的学校 Logo，例如 "/images/hit-logo.png"。
+    school_logo: "/images/hit.jpg"
+    school_unit: "Faculty of Computing"
+    program: "Ph.D. Candidate."
+    advisor: ""
+    # location: "Your city"
+    highlights:
+      - "Add a relevant highlight, or remove this line."
+
+  - start: "2017"
+    end: "2021"
+    institution: "South China Normal University"
+    # 图片替换：第二段教育经历左侧的学校 Logo。
+    school_logo: "/images/scnu.png"
+    school_unit: "School of Physics & Telecommunication Engineering"
+    program: "Bachelor of Engineering."
     advisor: ""
     location: "Your city"
     highlights:

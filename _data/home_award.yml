@@ -1,0 +1,8 @@
+items:
+  - date: "Year"
+    title: "Personal Milestone"
+    # 图片替换：生活动态卡片左侧的小图，例如 "/images/life-photo.jpg"。
+    logo: ""
+    # 视频替换：生活动态视频放在卡片正文下方，例如 "/videos/life-update.mp4"。
+    video: ""
+    summary: "A short update you would like to share."

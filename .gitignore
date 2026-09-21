@@ -30,3 +30,6 @@ desktop.ini
 /README.md
 *.cmd
 *.ps1
+
+# Local source for the rendered website image
+/images/urbangs.pdf

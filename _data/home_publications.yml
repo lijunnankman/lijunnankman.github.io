@@ -1,34 +1,45 @@
 items:
-  - title: "Accepted Paper Title"
-    authors: "Your Name, Coauthor Name"
+  - title: 'G\textsuperscript{2}S\textsuperscript{2}-IR: Glocal Gaussian Splatting with Surface Awareness for Inverse Rendering'
+    authors: "<strong>Junnan Li</strong>, Shengping Zhang, Ru Li, Shunyuan Zheng, Chenyang Wang, Henglu Wei, Xiangyang Ji"
     status: "Accepted"
-    venue: "Conference or Journal"
+    # 录用去向：填写期刊或会议全称及缩写，页面会显示为斜体发表信息。
+    venue: "International Journal of Computer Vision"
+    venue_short: "IJCV"
     year: "2026"
-    figure: ""
+    # 动态演示 GIF：在论文卡片左侧自动播放。
+    figure: "/images/G2S2IR.gif"
+    # 视频替换：可填 "/videos/paper-accepted.mp4"；填入后视频会占用左侧大图位置，figure 可作为封面。
+    video: ""
     keywords: []
-    teaser: "One sentence about the contribution."
+    teaser: ""
     abstract: ""
     paper_link: ""
     code_link: ""
-  - title: "Submitted Paper Title 1"
-    authors: "Your Name, Coauthor Name"
+  - title: "GlareSplit: Cross-Parallel Polarized Gaussian Splatting for Reflective Object Inverse Rendering"
+    authors: "<strong>Junnan Li</strong>, Qingyue Huang, Huan Wang, Ru Li "
     status: "Under Review"
     venue: ""
     year: "2026"
-    figure: ""
+    # 图片替换：这篇在投论文左侧的大图。
+    figure: "/images/glaresplit.png"
+    # 视频替换：可填这一篇论文的 MP4 演示视频；留空则显示 figure。
+    video: ""
     keywords: []
-    teaser: "One sentence about the contribution."
+    teaser: ""
     abstract: ""
     paper_link: ""
     code_link: ""
-  - title: "Submitted Paper Title 2"
-    authors: "Your Name, Coauthor Name"
+  - title: "UrbanGS: Inverse Rendering of Dynamic Urban Scenes via Gaussian Splatting"
+    authors: "<strong>Junnan Li</strong>, Ru Lia,, Yixiong Lin, Chenyang Wang, Xianzhu Liu, Sun Xin"
     status: "Under Review"
     venue: ""
     year: "2026"
-    figure: ""
+    # 图片替换：这篇在投论文左侧的大图。
+    figure: "/images/urbangs.png"
+    # 视频替换：可填这一篇论文的 MP4 演示视频；留空则显示 figure。
+    video: ""
     keywords: []
-    teaser: "One sentence about the contribution."
+    teaser: ""
     abstract: ""
     paper_link: ""
     code_link: ""

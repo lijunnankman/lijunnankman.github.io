@@ -1,6 +1,9 @@
 items:
   - title: "Project Title"
+    # 图片替换：项目卡片左侧的小图 / Logo，例如 "/images/project.png"。
     logo: ""
+    # 视频替换：项目演示视频放在卡片正文下方，例如 "/videos/project-demo.mp4"。
+    video: ""
     keywords: []
     teaser: "What the project does and why it matters."
     details: ""
