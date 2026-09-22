@@ -1,11 +1,76 @@
 items:
-  - title: "Project Title"
-    # 图片替换：项目卡片左侧的小图 / Logo，例如 "/images/project.png"。
-    logo: ""
-    # 视频替换：项目演示视频放在卡片正文下方，例如 "/videos/project-demo.mp4"。
+  # 阿里巴巴实习项目占位符：请直接替换本条目的 title、keywords、teaser 和 details。
+  - title: "Alibaba Internship Project"
+    logo: "/images/alibaba.png"
     video: ""
     keywords: []
-    teaser: "What the project does and why it matters."
+    teaser: "Content to be added."
     details: ""
+    link: ""
+    github_repo: ""
+
+  - title: "MindSpore Model, Operator, and Inference Development"
+    logo: "/images/mindspore.png"
+    video: ""
+    keywords:
+      - "MindSpore"
+      - "MindX"
+      - "Edge AI"
+    teaser: "Reimplemented neural network models in MindSpore and contributed model and operator code for edge inference."
+    details: >-
+      Participated in the development of MindX edge-side models and low-level MindSpore operators. The contributions were merged into the MindSpore open-source community and recognized by the Ascend developer program.
+    link: ""
+    github_repo: ""
+
+  - title: "G²S²-IR: Glocal Gaussian Splatting with Surface Awareness for Inverse Rendering"
+    logo: "/images/G2S2IR.gif"
+    video: ""
+    keywords:
+      - "Gaussian Splatting"
+      - "Inverse Rendering"
+      - "Surface Reconstruction"
+    teaser: "A global-local surface-aware inverse rendering method designed to reduce Gaussian floaters caused by training-view overfitting."
+    details: >-
+      Conducted during a research internship at Qiyuan National Laboratory under the supervision of Prof. Xiangyang Ji. The work studies material decomposition for objects represented with 3D Gaussians and led to an IJCV manuscript and one granted patent.
+    link: ""
+    github_repo: ""
+
+  # - title: "UrbanGS: Inverse Rendering of Dynamic Urban Scenes via Gaussian Splatting"
+  #   logo: "/images/urbangs.png"
+  #   video: ""
+  #   keywords:
+  #     - "Dynamic Scenes"
+  #     - "Autonomous Driving"
+  #     - "Inverse Rendering"
+  #   teaser: "An inverse rendering framework for dynamic outdoor driving scenes based on explicit static-dynamic decomposition."
+  #   details: >-
+  #     Designed a dynamic normal reconstruction method for moving objects to support inverse rendering in complex urban environments.
+  #   link: ""
+  #   github_repo: ""
+
+  - title: "Lightweight Models for Infrared Imaging"
+    logo: "/images/raytron.jpg"
+    video: ""
+    keywords:
+      - "Infrared Imaging"
+      - "Lightweight Models"
+      - "Deep Learning"
+    teaser: "Developed lightweight neural models for infrared-image processing during an internship at Raytron Technology."
+    details: >-
+      Focused on deployment-oriented algorithm development. One related patent application has been accepted for review.
+    link: ""
+    github_repo: ""
+
+
+  - title: "LiDAR-Camera Fusion for 3D Multi-Object Tracking"
+    logo: "/images/hit.jpg"
+    video: ""
+    keywords:
+      - "3D Object Detection"
+      - "LiDAR-Camera Fusion"
+      - "Multi-Object Tracking"
+    teaser: "Investigated LiDAR-camera fusion strategies for 3D detection in a multi-object tracking research project."
+    details: >-
+      Contributed to an NSFC General Program proposal on spatiotemporal context representation and association methods for 3D point-cloud multi-object tracking.
     link: ""
     github_repo: ""

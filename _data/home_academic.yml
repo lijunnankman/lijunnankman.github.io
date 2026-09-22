@@ -9,7 +9,7 @@ items:
     advisor: ""
     # location: "Your city"
     highlights:
-      - "Add a relevant highlight, or remove this line."
+      # - "Add a relevant highlight, or remove this line."
 
   - start: "2017"
     end: "2021"
@@ -21,4 +21,4 @@ items:
     advisor: ""
     location: "Your city"
     highlights:
-      - "Add a relevant highlight, or remove this line."
+      # - "Add a relevant highlight, or remove this line."

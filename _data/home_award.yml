@@ -1,8 +1,36 @@
 items:
-  - date: "Year"
-    title: "Personal Milestone"
-    # 图片替换：生活动态卡片左侧的小图，例如 "/images/life-photo.jpg"。
-    logo: ""
-    # 视频替换：生活动态视频放在卡片正文下方，例如 "/videos/life-update.mp4"。
-    video: ""
-    summary: "A short update you would like to share."
+  - title: "National Scholarship"
+    issuer: "Ministry of Education of China"
+    year: "2020"
+    description: "Recognized for outstanding academic performance."
+
+  - title: "National Scholarship"
+    issuer: "Ministry of Education of China"
+    year: "2019"
+    description: "Recognized for outstanding academic performance."
+
+  - title: "Top 100 Outstanding Graduate"
+    issuer: "South China Normal University"
+    year: "2021"
+    description: "Selected as one of the university's 100 outstanding graduates."
+    # link: "https://static.nfnews.com/content/202108/05/c5602289.html"
+
+    # link: "https://static.nfnews.com/content/202108/05/c5602289.html"
+
+  # - title: "Top Ten Liru Student"
+  #   issuer: "South China Normal University"
+  #   year: "2020"
+  #   description: "University-wide honor recognizing excellence in academics, research, practice, and service."
+    # link: "https://static.nfnews.com/content/202108/05/c5602289.html"
+
+  - title: "National Bronze Award — 12th Challenge Cup"
+    issuer: "China College Students' Entrepreneurship Competition"
+    year: "2020"
+    description: "Awarded in the national final of the entrepreneurship competition."
+    # link: "https://news.scnu.edu.cn/35464"
+
+  - title: "Second Prize — Intel Cup Undergraduate Electronic Design Contest"
+    issuer: "Intel Cup Undergraduate Electronic Design Contest"
+    year: "2020"
+    description: "National finalist for an intelligent classroom-feedback system."
+    # link: "https://english.scnu.edu.cn/a/20201030/450.html"

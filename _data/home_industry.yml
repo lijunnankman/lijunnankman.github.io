@@ -1,6 +1,6 @@
 items:
-  - start: "Jan 2025"
-    end: "Jun 2025"
+  - start: "Mar 2026"
+    end: "Nov 2026"
     company: "Alibaba Group · Youku"
     # 图片替换：这段实习经历左侧的公司 Logo，例如 "/images/company.png"。
     # company_logo: "/images/alibaba.png"
@@ -9,31 +9,30 @@ items:
       - "/images/youku.png"
     role: "Algorithm Intern"
     location: "Hangzhou, China"
-    summary: "One sentence about your contribution."
-    bullets:
-      - "What you built or improved."
-      - "A measurable result, if available."
+    # 内容占位：待补充阿里巴巴实习的具体项目、职责与成果。
+    summary: ""
+    bullets: []
 
-  - start: "Jan 2025"
-    end: "Jun 2025"
-    company: "Company Name"
+  - start: "Mar 2025"
+    end: "Aug 2025"
+    company: "Raytron Technology"
     # 图片替换：这段实习经历左侧的公司 Logo，例如 "/images/company.png"。
     company_logo: "/images/raytron.jpg"
     role: "Algorithm Intern"
     location: "Yantai, China"
-    summary: "One sentence about your contribution."
+    summary: "Developed lightweight deep-learning models for infrared image processing, with a focus on deployment efficiency."
     bullets:
-      - "What you built or improved."
-      - "A measurable result, if available."
+      - "Designed and optimized lightweight model architectures for infrared imaging tasks."
+      - "Contributed to a related patent application that was accepted for examination."
 
-  - start: "Jan 2025"
-    end: "Jun 2025"
-    company: "Company Name"
+  - start: "Nov 2023"
+    end: "Nov 2024"
+    company: "Qiyuan National Laboratory"
     # 图片替换：这段实习经历左侧的公司 Logo，例如 "/images/company.png"。
     company_logo: "/images/qiyuan.jpg"
-    role: "Algorithm Intern"
+    role: "Research Intern"
     location: "Beijing, China"
-    summary: "One sentence about your contribution."
+    summary: 'Researched material decomposition for 3D Gaussian representations under the supervision of Prof. <a href="https://www.au.tsinghua.edu.cn/info/1111/1524.htm" target="_blank" rel="noopener noreferrer">Xiangyang Ji</a>.'
     bullets:
-      - "What you built or improved."
-      - "A measurable result, if available."
+      - "Developed methods for disentangling object material properties in a 3D Gaussian-based inverse rendering pipeline."
+      - "The project produced an IJCV paper and one granted patent."

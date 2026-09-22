@@ -180,26 +180,20 @@
     </section>
 
     {% if site.data.home_award.items.size > 0 %}
-      <section id="award" class="home-section">
-        <h2>Award</h2>
-        {% for x in site.data.home_award.items %}
-          <div class="card">
-            <div class="card__logo">
-              {% if x.logo != "" %}<img src="{{ x.logo | relative_url }}" alt="{{ x.title }} logo">{% else %}<span class="card__placeholder" aria-hidden="true"></span>{% endif %}
+      <section id="awards" class="home-section">
+        <h2>Awards</h2>
+        <div class="award-list">
+          {% for x in site.data.home_award.items %}
+            <div class="award-item">
+              <div class="award-year">{{ x.year }}</div>
+              <div class="award-body">
+                <h3>{% if x.link and x.link != "" %}<a href="{{ x.link }}">{{ x.title }}</a>{% else %}{{ x.title }}{% endif %}</h3>
+                {% if x.issuer and x.issuer != "" %}<div class="award-issuer">{{ x.issuer }}</div>{% endif %}
+                {% if x.description and x.description != "" %}<p>{{ x.description }}</p>{% endif %}
+              </div>
             </div>
-            <div class="card__body">
-              <div class="meta">{{ x.date }}</div>
-              <h3>{{ x.title }}</h3>
-              {% if x.summary != "" %}<p>{{ x.summary }}</p>{% endif %}
-              {% if x.video and x.video != "" %}
-                <video class="card__video" controls preload="metadata" playsinline>
-                  <source src="{% if x.video contains '://' %}{{ x.video }}{% else %}{{ x.video | relative_url }}{% endif %}" type="video/mp4">
-                  Your browser does not support video.
-                </video>
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
       </section>
     {% endif %}
   </div>

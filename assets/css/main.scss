@@ -378,6 +378,38 @@ a:hover {
   margin-bottom: 0.3rem;
 }
 
+.award-list {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.award-item {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.award-year {
+  color: #555;
+  font-variant-numeric: tabular-nums;
+}
+
+.award-body h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.award-issuer {
+  margin-top: 0.1rem;
+  color: #555;
+}
+
+.award-body p {
+  margin: 0.3rem 0 0;
+}
+
 .chips {
   display: flex;
   flex-wrap: wrap;
