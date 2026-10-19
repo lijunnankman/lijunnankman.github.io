@@ -9,9 +9,10 @@ items:
       - "/images/youku.png"
     role: "Algorithm Intern"
     location: "Hangzhou, China"
-    # 内容占位：待补充阿里巴巴实习的具体项目、职责与成果。
-    summary: ""
-    bullets: []
+    summary: "Researched neural importance sampling for layered BRDFs, from proposal learning to physically based rendering evaluation."
+    bullets: 
+      - "Designed and trained conditional neural proposals using measured BRDF data and paired layer configurations."
+      - "Built CUDA-based transport-data workflows and evaluated exported proposal tables in Mitsuba against neural and native sampling baselines."
 
   - start: "Mar 2025"
     end: "Aug 2025"
