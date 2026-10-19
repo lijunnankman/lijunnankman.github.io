@@ -6,7 +6,7 @@ items:
     keywords:
     - "Neural BRDF"
     - "Importance Sampling"
-    - "Layered Material"
+    - "Layered Materials"
     teaser: "Neural Importance Sampling for Layered BRDFs"
     details: >-
       The project uses CUDA-generated transport data to train per-material sampling proposals and exports proposal tables for Mitsuba rendering. Experiments compare proposal quality with neural and native sampling baselines on MERL materials and layered-material scenes.
